@@ -1,0 +1,22 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+    <table style="width:100%">
+  <!-- table header -->
+  {% if ult_list%}
+  <tr>
+     {% for key in ult_list[0] %}
+     <th> {{ key }} </th>
+     {% endfor %}
+  </tr>
+  {% endif %}
+
+  <!-- table rows -->
+  {% for dict_item in ult_list %}
+  <tr>
+     {% for value in dict_item.values() %}
+     <td> {{ value }} </td>
+     {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
